@@ -9,13 +9,33 @@ body {
     scroll-behavior: smooth;
 }
 
+/* GOOGLE FONTS */
+
+.location{
+    font-family: 'Lora', serif;
+}
+
+.calendar{
+    font-family: 'Rubik Mono One', monospace;
+}
+
+/* NAVBAR */
+
+
+
+input::placeholder{
+    font-family: 'Poppins', sans-serif;
+    color: grey;
+    font-size: 13px;
+    font-weight: 900;
+}
+
 .card {
     margin: 1rem; 
-
     position: relative;
     perspective: 1000px;
-    width: 350px; /* Ajusta el ancho según tus necesidades */
-    height: 500px; /* Ajusta la altura según tus necesidades */
+    width: 250px; /* Ajusta el ancho según tus necesidades */
+    height: 400px; /* Ajusta la altura según tus necesidades */
 
 }
 
@@ -43,9 +63,6 @@ body {
     height: 100%;
 }
 
-.location{
-    font-family: 'Lora', serif;
-}
 
 .card-front {
     background-size: cover;
@@ -83,13 +100,13 @@ body {
     background-color: white;
     border: 1px solid black;
     border-radius: 100%;
-    width: 45px;
-    height: 45px;
+    width: 40px;
+    height: 40px;
     padding: 0.7rem;
     position: absolute;
     top: 10px;
     right: 10px;
     cursor: pointer;
     z-index: 10;
-    opacity: 0.9;
+    opacity: 0.8;
 }

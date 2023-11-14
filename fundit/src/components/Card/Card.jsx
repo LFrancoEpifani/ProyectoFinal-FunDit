@@ -29,22 +29,20 @@ export default function Card() {
     getFlyers().then(flyersData => {
       const flyersWithDefaults = flyersData.map(flyer => ({
         ...flyer,
-        socialMedia: flyer.socialMedia || [] // Provide an empty array as a default value
+        socialMedia: flyer.socialMedia || []
       }));
       setFlyers(flyersWithDefaults);
     });
   }, []);
-
-  const openSocialMedia = (url) => {
-    window.open(url, '_blank');
-  };
 
   const flipHandle = () => {
     setIsFlipped(!isFlipped);
   };
 
   return (
-    <div className="flex flex-wrap" >
+    <div className="text-center m-4">
+      <h2 className="calendar text-xl mb-8">Calendario</h2>
+    <div className="flex flex-wrap justify-center items-center" >
       {flyers.map((flyer) => (
         <div key={flyer._id} className="card">
           <Icon onClick={flipHandle} className="flip-icon" icon="mi:switch" />
@@ -61,21 +59,21 @@ export default function Card() {
               className="card-back text-white"
               style={{ backgroundImage: `url(${flyer.imageUrl})` }}
             >
-              <div className="m-12 text-xl font-bold uppercase text-center">
+              <div className="mt-12 text-lg font-bold uppercase text-center">
                 <h3 className="">{flyer.title}</h3>
               </div>
-              <div className="descripction m-8 text-center text-md font-light">
+              <div className="descripction m-4 text-center text-md font-light">
                 <p>{flyer.description}</p>
               </div>
-              <div className="flex justify-between m-4 text-lg">
+              <div className="flex justify-between m-4 text-md">
                 <p>{flyer.schedule}hs</p>
-                <p className="capitalize"  style={{ color: flyer.price === 'gratis' ? 'text-green-500 font-bold' : 'inherit' }}>{flyer.price}</p>
+                <p className="capitalize"  style={{ color: flyer.price === 'gratis' ? '#16FF00' : 'inherit' }}>{flyer.price}</p>
               </div>
               <div className="text-center gap-2 flex justify-center items-center m-4">
               <Icon className="text-xl" icon="gis:location-poi" color="red" />
-                <p className="location text-lg -tracking-tight">{flyer.location}</p>
+                <p className="location text-md -tracking-tight">{flyer.location}</p>
               </div>
-              <div className="flex justify-around items-center m-12 text-xl">
+              <div className="flex justify-between items-center m-8 text-lg">
                 <button>
                   <Icon icon="ic:baseline-facebook" color="white" />
                 </button>
@@ -93,6 +91,7 @@ export default function Card() {
         </div>
         </div>
       ))}
+    </div>
     </div>
   );
 }
