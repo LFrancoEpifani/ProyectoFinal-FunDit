@@ -39,9 +39,9 @@ export default function Card() {
     setIsFlipped(!isFlipped);
   };
 
-  return (
+  return ( 
     <div className="text-center m-4">
-      <h2 className="calendar text-xl mb-8">Calendario</h2>
+      <h2 className="calendar text-lg m-8 text-black">Calendario</h2>
     <div className="flex flex-wrap justify-center items-center" >
       {flyers.map((flyer) => (
         <div key={flyer._id} className="card">
@@ -50,8 +50,15 @@ export default function Card() {
             <div
               className="card-front"
               style={{ backgroundImage: `url(${flyer.imageUrl})` }}
-            >
-              
+            > 
+            <div className="bg-black absolute bottom-0 w-full p-2 flex justify-between items-center">
+              <h2 className="text-white font-bold uppercase">{flyer.title}</h2>
+              <div className="flex gap-2">
+                <Icon className="rounded-full bg-white w-6 h-6 p-1" icon="bi:chat"/>
+                <Icon className="rounded-full bg-white w-6 h-6 p-1" icon="ion:ticket-outline"/>
+              </div>
+            </div>
+
             </div>
 
 
@@ -67,8 +74,10 @@ export default function Card() {
               </div>
               <div className="flex justify-between m-4 text-md">
                 <p>{flyer.schedule}hs</p>
-                <p className="capitalize"  style={{ color: flyer.price === 'gratis' ? '#16FF00' : 'inherit' }}>{flyer.price}</p>
-              </div>
+                  <p className="capitalize" style={{ color: flyer.price.toLowerCase() === 'gratis' ? '#16FF00' : 'inherit' }}>
+                  {flyer.price}
+                  </p>
+                </div>
               <div className="text-center gap-2 flex justify-center items-center m-4">
               <Icon className="text-xl" icon="gis:location-poi" color="red" />
                 <p className="location text-md -tracking-tight">{flyer.location}</p>

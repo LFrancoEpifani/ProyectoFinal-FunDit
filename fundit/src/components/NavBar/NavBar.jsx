@@ -20,11 +20,15 @@ export default function NavBar() {
                         icon='material-symbols:menu'
                         color='white'
                     />
-                    <img className='w-22 h-7' src={Logo} alt='FunDit Logo' />
+                    <img className='w-18 h-6' src={Logo} alt='FunDit Logo' />
 
-                    <div className='flex gap-4'>
+                    <div className='flex gap-2'>
+                        <button>
                         <Icon className=' bg-white rounded-full w-6 h-6 p-1' icon="material-symbols:search"/>
+                        </button>
+                        <button>
                         <Icon className=' bg-white rounded-full w-6 h-6 p-1' icon="fe:user"/>
+                        </button>
                     </div>
                 </nav>
             </div>
