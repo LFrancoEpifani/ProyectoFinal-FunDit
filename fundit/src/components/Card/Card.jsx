@@ -48,22 +48,22 @@ export default function Card() {
           <Icon onClick={flipHandle} className="flip-icon" icon="mi:switch" />
           <div className={`card-inner ${isFlipped ? "is-flipped" : ""}`}>
             <div
-              className="card-front"
+              className="card-front rounded-lg"
               style={{ backgroundImage: `url(${flyer.imageUrl})` }}
             > 
-            <div className="bg-black absolute bottom-0 w-full p-2 flex justify-between items-center">
+            <div className="bg-black absolute bottom-0 w-full p-2 flex justify-between items-center rounded-b-lg">
               <h2 className="text-white font-bold uppercase">{flyer.title}</h2>
               <div className="flex gap-2">
-                <Icon className="rounded-full bg-white w-6 h-6 p-1" icon="bi:chat"/>
-                <Icon className="rounded-full bg-white w-6 h-6 p-1" icon="ion:ticket-outline"/>
+                <Icon className="rounded-full bg-white w-7 h-6 p-1" icon="bi:chat-fill" />
+                <Icon className="rounded-full bg-white w-7 h-6 p-1" icon="ion:ticket" />
               </div>
             </div>
 
             </div>
-
+        
 
             <div
-              className="card-back text-white"
+              className="card-back text-white rounded-lg"
               style={{ backgroundImage: `url(${flyer.imageUrl})` }}
             >
               <div className="mt-12 text-lg font-bold uppercase text-center">

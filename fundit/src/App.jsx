@@ -1,13 +1,15 @@
-import React from 'react'
-import Header from './components/Header/Header'
+import React from "react";
+import Header from "./components/Header/Header";
+import Main from "./components/Main/Main";
+
 
 function App() {
-
   return (
-      <div className='w-full h-screen flex justify-center items-center'>
-        <Header/>
-      </div>
-  )
+    <div className="w-full">
+      <Header />
+      <Main />
+    </div>
+  );
 }
 
-export default App
+export default App;
