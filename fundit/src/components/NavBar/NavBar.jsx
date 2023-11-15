@@ -14,7 +14,7 @@ export default function NavBar() {
 
     return (
         <div className='flex justify-between'>
-            <div className='bg-black w-full'>
+            <div className='bg-black navbar w-full'>
                 <nav className='p-2 flex items-center justify-between'>
                     <button onClick={toggleMenu}>
                         <Icon
