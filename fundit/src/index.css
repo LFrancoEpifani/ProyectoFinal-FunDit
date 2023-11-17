@@ -32,11 +32,15 @@ body {
 }
 
 .navbar{
-    background-color: #0b1e65;
+    background-color: #CF5E51;
+}
+
+.burger{
+    background-color: #ffffff;
 }
 
 .filter{
-    background-color: #0b1e65;
+    background-color: #CF5E51;
 }
 
 .hidden{

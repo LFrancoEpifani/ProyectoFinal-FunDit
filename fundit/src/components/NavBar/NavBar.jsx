@@ -1,7 +1,7 @@
 import React from "react";
 import { Icon } from "@iconify/react";
 import { useState } from "react";
-import Logo from "../../assets/logodun.png";
+import Logo from "../../assets/fRed.png";
 import BurgerContent from "./BurgerContent";
 import Login from "../Login/Login";
 

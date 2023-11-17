@@ -14,13 +14,13 @@ export default function BurgerContent({ toggleMenu }) {
 
   return (
     <div className='bg-opacity-60 bg-black fixed top-0 left-0 h-screen w-full flex justify-center items-center z-50 cursor-pointer'>
-      <div className='bg-white h-screen w-2/3 fixed top-0 left-0 shadow-2xl'>
+      <div className='burger h-screen w-2/3 fixed top-0 left-0 shadow-2xl'>
       <div className=''>
             <Icon onClick={toggleMenu} className='text-4xl ml-auto my-1 mr-1 transition-all duration-500 ease-in' icon='iconamoon:close-thin' />
           </div>
           {!isAuthenticated && (
             <div className='flex justify-start items-end gap-4'>
-            <img className='rounded-full w-12 h-12 object-cover border-2 border-black' src={Logo} alt="" />
+            <img className='rounded-full w-12 h-12 object-cover border-2 border-black m-1' src={Logo} alt="" />
             <p className='font-extrabold'>Nombre usuario</p>
           </div>
              )}    
