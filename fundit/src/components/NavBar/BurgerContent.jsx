@@ -68,6 +68,7 @@ export default function BurgerContent({ toggleMenu }) {
                     <Logout/>
                 </div>
             )}
+            
         </div>
         </div>
         </div>

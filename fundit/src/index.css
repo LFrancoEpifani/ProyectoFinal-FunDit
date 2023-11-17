@@ -19,11 +19,24 @@ body {
     font-family: 'Rubik Mono One', monospace;
 
     border-radius: 5px;
-    border: 2px solid white;
-    box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.2);
 
-  
+
+    border: 2px solid rgb(209, 213, 219);
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
     padding: 0.2rem;
+}
+
+.imagenLogo{
+    width: 90px;
+    height: 25px;
+}
+
+.navbar{
+    background-color: #0b1e65;
+}
+
+.filter{
+    background-color: #0b1e65;
 }
 
 .hidden{
@@ -34,18 +47,14 @@ body {
     padding: 0.1rem;
 }
 
+    input::placeholder{
+        text-indent: 0.3rem;
+        font-family: 'Poppins', sans-serif;
+        opacity: 0.8;
+        font-size: 13px;
+        font-weight: 900;
+    }
 
-/* NAVBAR */
-
-
-
-
-input::placeholder{
-    font-family: 'Poppins', sans-serif;
-    color: grey;
-    font-size: 13px;
-    font-weight: 900;
-}
 
 .card {
     margin: 1rem; 

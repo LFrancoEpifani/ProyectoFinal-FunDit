@@ -1,5 +1,4 @@
 import React from 'react'
-import FunDit from '../../assets/funditlogo2.png'
 import Card from "../Card/Card";
 
 export default function Main() {

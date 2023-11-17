@@ -1,44 +1,62 @@
-import React from 'react';
-import { Icon } from '@iconify/react';
-import { useState } from 'react';
-import Logo from '../../assets/FunDit.png';
-import BurgerContent from './BurgerContent';
-import Login from '../Login/Login'
+import React from "react";
+import { Icon } from "@iconify/react";
+import { useState } from "react";
+import Logo from "../../assets/logodun.png";
+import BurgerContent from "./BurgerContent";
+import Login from "../Login/Login";
 
 export default function NavBar() {
-    const [isMenuOpen, setMenuOpen] = useState(false);
 
-    const toggleMenu = () => {
-        setMenuOpen(!isMenuOpen);
-    };
+  const [isMenuOpen, setMenuOpen] = useState(false);
+  const [isLenguage, setIsLenguage] = useState(false);
 
-    return (
-        <div className='flex justify-between'>
-            <div className='bg-black navbar w-full'>
-                <nav className='p-2 flex items-center justify-between'>
-                    <button onClick={toggleMenu}>
-                        <Icon
-                        
-                            className={`text-2xl ${isMenuOpen ? 'hidden' : ''}`}
-                            icon='material-symbols:menu'
-                            color='white'
-                        />
-                    </button>
-                    {isMenuOpen && (
-                        <BurgerContent toggleMenu={toggleMenu} />
-                    )}
-                    <img className='w-20 h-7' src={Logo} alt='FunDit Logo' />
+  const toggleMenu = () => {
+    setMenuOpen(!isMenuOpen);
+  };
 
-                    <div className='flex gap-2'>
-                        <button>
-                        <Icon className=' bg-white rounded-full w-6 h-6 p-1' icon="material-symbols:search"/>
-                        </button>
-                        <button>
-                            <Login/>
-                        </button>
-                    </div>
-                </nav>
-            </div>
-        </div>
-    )
+  const changeLenguage = () => {
+    setIsLenguage(!isLenguage);
+  };
+
+  return (
+    <div className="flex justify-between">
+      <div className="navbar w-full p-1">
+        <nav className="p-1 flex justify-between items-center">
+          {/* Contenedor Izquierdo */}
+          <div className="flex-1 flex justify-start">
+            <button onClick={toggleMenu}>
+              <Icon
+                className={`text-2xl ${isMenuOpen ? "hidden" : ""}`}
+                icon="material-symbols:menu"
+                color="white"
+              />
+            </button>
+            {isMenuOpen && <BurgerContent toggleMenu={toggleMenu} />}
+          </div>
+
+          {/* Contenedor Central */}
+          <div className="flex-1 flex justify-center">
+            <img className="imagenLogo" src={Logo} alt="FunDit Logo" />
+          </div>
+
+          {/* Contenedor Derecho */}
+          <div className="flex-1 flex justify-end gap-2 items-center">
+            <button>
+              <Login />
+            </button>
+            <button onClick={changeLenguage}>
+              {isLenguage ? (
+                <Icon
+                  className="w-6 h-6"
+                  icon="openmoji:flag-united-states"
+                />
+              ) : (
+                <Icon className="w-6 h-6" icon="openmoji:flag-spain" />
+              )}
+            </button>
+          </div>
+        </nav>
+      </div>
+    </div>
+  );
 }
