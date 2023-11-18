@@ -37,7 +37,8 @@ body {
 
 
 .navbar{
-    background-image: radial-gradient( circle farthest-corner at 10% 20%, rgba(35,183,219,1) 0%, rgba(196,36,99,1) 90% );
+    background-color: #000;
+   
 }
 
 .filter{
@@ -53,6 +54,10 @@ body {
     font-weight: 800;
     font-family: 'Poppins', sans-serif;
     text-transform: uppercase;
+}
+
+.btn-modal-color{
+    background-color: rgba(0, 0, 0, 0.8);
 }
 
 .modal-filter{

@@ -2,7 +2,7 @@ import React from 'react';
 import { useAuth0 } from "@auth0/auth0-react";
 import {Icon} from '@iconify/react';
 import Logout from  '../Login/Logout';
-import Logo from '../../assets/images.jpeg'
+import Logo from '../../assets/losmongo.jpg'
 
 export default function BurgerContent({ toggleMenu }) {
 

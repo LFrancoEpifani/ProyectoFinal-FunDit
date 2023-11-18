@@ -1,13 +1,12 @@
 import React from "react";
 import { Icon } from "@iconify/react";
 import { useState } from "react";
-import Logo from "../../assets/logoSolo.png";
+import Logo from "../../assets/FunditLogo.png";
 import BurgerContent from "./BurgerContent";
 import Login from "../Login/Login";
 
 
 export default function NavBar() {
-
 
   const [isMenuOpen, setMenuOpen] = useState(false);
   const [isLenguage, setIsLenguage] = useState(false);
@@ -46,9 +45,9 @@ export default function NavBar() {
               <Login />
             <button onClick={changeLenguage}>
               {isLenguage ? (
-                <Icon className="w-8 h-8" icon="openmoji:flag-united-states" />
+                <Icon className="w-7 h-7" icon="openmoji:flag-united-states" />
               ) : (
-                <Icon className="w-8 h-8" icon="openmoji:flag-spain" />
+                <Icon className="w-7 h-7" icon="openmoji:flag-spain" />
               )}
             </button>
           </div>
