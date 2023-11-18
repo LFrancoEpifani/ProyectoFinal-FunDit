@@ -26,7 +26,7 @@ export default function NavBar() {
           <div className="flex-1 flex justify-start">
             <button onClick={toggleMenu}>
               <Icon
-                className={`text-2xl ${isMenuOpen ? "hidden" : ""}`}
+                className={`text-3xl ${isMenuOpen ? "hidden" : ""}`}
                 icon="material-symbols:menu"
                 color="white"
               />
@@ -51,7 +51,7 @@ export default function NavBar() {
                   icon="openmoji:flag-united-states"
                 />
               ) : (
-                <Icon className="w-6 h-6" icon="openmoji:flag-spain" />
+                <Icon className="w-8 h-8" icon="openmoji:flag-spain" />
               )}
             </button>
           </div>
