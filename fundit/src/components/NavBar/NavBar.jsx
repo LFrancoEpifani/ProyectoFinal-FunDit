@@ -5,6 +5,8 @@ import Logo from "../../assets/fRed.png";
 import BurgerContent from "./BurgerContent";
 import Login from "../Login/Login";
 
+
+
 export default function NavBar() {
 
   const [isMenuOpen, setMenuOpen] = useState(false);
@@ -26,7 +28,7 @@ export default function NavBar() {
           <div className="flex-1 flex justify-start">
             <button onClick={toggleMenu}>
               <Icon
-                className={`text-3xl ${isMenuOpen ? "hidden" : ""}`}
+                className={`menu-burger ${isMenuOpen ? "hidden" : ""}`}
                 icon="material-symbols:menu"
                 color="white"
               />
@@ -41,15 +43,10 @@ export default function NavBar() {
 
           {/* Contenedor Derecho */}
           <div className="flex-1 flex justify-end gap-2 items-center">
-            <button>
               <Login />
-            </button>
             <button onClick={changeLenguage}>
               {isLenguage ? (
-                <Icon
-                  className="w-6 h-6"
-                  icon="openmoji:flag-united-states"
-                />
+                <Icon className="w-8 h-8" icon="openmoji:flag-united-states" />
               ) : (
                 <Icon className="w-8 h-8" icon="openmoji:flag-spain" />
               )}

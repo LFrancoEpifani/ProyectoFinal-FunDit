@@ -2,6 +2,9 @@ import { useState, useEffect } from "react";
 import { Icon } from "@iconify/react";
 import { client } from "../../../../fundit-backend/.sanity/lib/client";
 
+
+
+
 export async function getFlyers() {
   const query = `*[_type == "flyer"]{
     _id,
@@ -22,8 +25,12 @@ export async function getFlyers() {
 }
 
 export default function Card() {
+
   const [flyers, setFlyers] = useState([]);
+
   const [isFlipped, setIsFlipped] = useState(false);
+
+
 
   useEffect(() => {
     getFlyers().then(flyersData => {
@@ -41,7 +48,7 @@ export default function Card() {
 
   return ( 
     <div className="text-center">
-      <h2 className="calendar text-lg mt-8 mb-4 mx-6 text-black border-gray-300">Calendario</h2>
+      <h2 className="calendar text-lg mt-8 mb-4 mx-6 text-black border-gray-300">Eventos</h2>
       <div className="flex justify-center items-center gap-2">
         <input className="border-2 border-gray-300 h-9 px-2 pr-8 rounded-lg shadow-2xl" type="text" placeholder="Buscador..."/>
         <div className="filter flex justify-center items-center gap-1 text-white py-1 px-3 rounded">

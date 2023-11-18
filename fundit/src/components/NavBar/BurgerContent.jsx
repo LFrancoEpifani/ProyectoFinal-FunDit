@@ -19,8 +19,8 @@ export default function BurgerContent({ toggleMenu }) {
             <Icon onClick={toggleMenu} className='text-4xl ml-auto my-1 mr-1 transition-all duration-500 ease-in' icon='iconamoon:close-thin' />
           </div>
           {!isAuthenticated && (
-            <div className='flex justify-start items-end gap-4'>
-            <img className='rounded-full w-12 h-12 object-cover border-2 border-black m-1' src={Logo} alt="" />
+            <div className='flex justify-start items-end mx-3 gap-1'>
+            <img className='rounded-full w-12 h-12 object-cover border-2 border-black' src={Logo} alt="" />
             <p className='font-extrabold'>Nombre usuario</p>
           </div>
              )}    

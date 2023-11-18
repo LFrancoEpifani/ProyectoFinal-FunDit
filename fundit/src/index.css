@@ -26,9 +26,13 @@ body {
     padding: 0.2rem;
 }
 
+.menu-burger{
+    font-size: 27px;
+}
+
 .imagenLogo{
     width: 110px;
-    height: 30px;
+    height: 27px;
 }
 
 .navbar{
@@ -37,6 +41,10 @@ body {
 
 .filter{
     background-color: #CF5E51;
+}
+
+.burger{
+    background-color: rgba(247, 247, 247);
 }
 
 .hidden{
