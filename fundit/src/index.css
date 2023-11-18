@@ -35,8 +35,9 @@ body {
     height: 27px;
 }
 
+
 .navbar{
-    background-color: #CF5E51;
+    background-image: radial-gradient( circle farthest-corner at 10% 20%, rgba(35,183,219,1) 0%, rgba(196,36,99,1) 90% );
 }
 
 .filter{
@@ -46,6 +47,31 @@ body {
 .burger{
     background-color: rgba(247, 247, 247);
 }
+  
+.week{
+    font-size: 14px;
+    font-weight: 800;
+    font-family: 'Poppins', sans-serif;
+    text-transform: uppercase;
+}
+
+.modal-filter{
+    background-color: rgba(245, 245, 245, 0.8);
+}
+
+  
+.categories{
+    font-size: 14px;
+    font-weight: 800;
+    font-family: 'Poppins', sans-serif;
+    text-transform: uppercase;
+}
+
+.title-cat{
+    margin-top: 0.8rem;
+    font-family: 'Rubik Mono One', monospace;
+}
+
 
 .hidden{
     visibility: hidden;

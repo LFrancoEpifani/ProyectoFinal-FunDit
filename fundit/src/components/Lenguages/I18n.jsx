@@ -1,20 +1,16 @@
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
+import translationEN from '../../locales/en/translation.json';
+import translationES from '../../locales/es/translation.json';
 
 
 
 const resources = {
   en: {
-    translation: {
-      welcome: "Flyer Events",
-      filter: "Filter"
-    }
+    translation: translationEN
   },
   es: {
-    translation: {
-      welcome: "Cartelera Folletos",
-      filter: "Filtro"
-    }
+    translation: translationES
   }
 };
 

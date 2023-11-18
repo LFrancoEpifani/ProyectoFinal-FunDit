@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Icon } from "@iconify/react";
 import { client } from "../../../../fundit-backend/.sanity/lib/client";
-
+import FilterModal from "../FilterModal/FilterModal";
 
 
 
@@ -26,10 +26,12 @@ export async function getFlyers() {
 
 export default function Card() {
 
+
   const [flyers, setFlyers] = useState([]);
 
   const [isFlipped, setIsFlipped] = useState(false);
 
+  const [isModalOpen, setModalOpen] = useState(false);
 
 
   useEffect(() => {
@@ -46,14 +48,23 @@ export default function Card() {
     setIsFlipped(!isFlipped);
   };
 
+  const toggleModal = () => {
+    setModalOpen(!isModalOpen);
+  };
+
   return ( 
     <div className="text-center">
-      <h2 className="calendar text-lg mt-8 mb-4 mx-6 text-black border-gray-300">Eventos</h2>
+      <h2 className="calendar text-lg mt-8 mb-4 mx-6 text-black border-gray-300">Events</h2>
       <div className="flex justify-center items-center gap-2">
         <input className="border-2 border-gray-300 h-9 px-2 pr-8 rounded-lg shadow-2xl" type="text" placeholder="Buscador..."/>
-        <div className="filter flex justify-center items-center gap-1 text-white py-1 px-3 rounded">
-          <p>Filtro</p>
-          <Icon icon="mi:filter" />
+        <div className="border-2 border-gray-300 py-1 px-2 shadow-2xl text-black rounded-md">
+          <button onClick={toggleModal} className="flex justify-center items-center gap-1">
+            <p className="">Filtro</p>
+            <Icon icon="mi:filter" />
+          </button>
+          {isModalOpen && (
+            <FilterModal toggleModal={toggleModal}/>
+      )}
         </div>
       </div>
     <div className="flex flex-wrap justify-center items-center" >

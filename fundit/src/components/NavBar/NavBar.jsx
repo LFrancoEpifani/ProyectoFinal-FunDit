@@ -1,13 +1,13 @@
 import React from "react";
 import { Icon } from "@iconify/react";
 import { useState } from "react";
-import Logo from "../../assets/fRed.png";
+import Logo from "../../assets/logoSolo.png";
 import BurgerContent from "./BurgerContent";
 import Login from "../Login/Login";
 
 
-
 export default function NavBar() {
+
 
   const [isMenuOpen, setMenuOpen] = useState(false);
   const [isLenguage, setIsLenguage] = useState(false);
@@ -19,7 +19,7 @@ export default function NavBar() {
   const changeLenguage = () => {
     setIsLenguage(!isLenguage);
   };
-
+  
   return (
     <div className="flex justify-between">
       <div className="navbar w-full p-1">
