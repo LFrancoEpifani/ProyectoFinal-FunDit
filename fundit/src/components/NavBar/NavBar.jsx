@@ -4,9 +4,18 @@ import { useState } from "react";
 import Logo from "../../assets/FunditLogo.png";
 import BurgerContent from "./BurgerContent";
 import Login from "../Login/Login";
+import { useTranslation } from "react-i18next";
+import { changeLanguage } from "i18next";
 
 
 export default function NavBar() { 
+
+  const {t, i18n} = useTranslation('global');
+
+  const handleChangeLenguage = (lang) => {
+    i18n.changeLanguage(lang);
+    setIsLenguage(lang === "es"); // Cambia el estado de la bandera dependiendo del idioma
+  }
 
   const [isMenuOpen, setMenuOpen] = useState(false);
   const [isLenguage, setIsLenguage] = useState(false);
@@ -15,9 +24,8 @@ export default function NavBar() {
     setMenuOpen(!isMenuOpen);
   };
 
-  const changeLenguage = () => {
-    setIsLenguage(!isLenguage);
-  };
+
+  
   
   return (
     <div className="flex justify-between">
@@ -43,13 +51,15 @@ export default function NavBar() {
           {/* Contenedor Derecho */}
           <div className="flex-1 flex justify-end gap-2 items-center">
               <Login />
-            <button onClick={changeLenguage}>
+            <button>
               {isLenguage ? (
-                <Icon className="w-7 h-7" icon="openmoji:flag-united-states" />
+                    <button onClick={() => handleChangeLenguage("en")}>
+                        <Icon className="w-7 h-7" icon="openmoji:flag-united-states" />
+                    </button>
               ) : (
-                <>
-                  <Icon className="w-7 h-7" icon="openmoji:flag-spain" />
-                </>
+                  <button onClick={() => handleChangeLenguage("es")}>
+                    <Icon className="w-7 h-7" icon="openmoji:flag-spain" />
+                  </button>
               )}
             </button>
           </div>

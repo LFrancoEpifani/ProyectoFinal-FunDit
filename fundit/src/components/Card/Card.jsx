@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Icon } from "@iconify/react";
 import { client } from "../../../../fundit-backend/.sanity/lib/client";
 import FilterModal from "../FilterModal/FilterModal";
-import { useTranslation, Trans } from 'react-i18next';
+import { useTranslation } from 'react-i18next';
 
 
 
@@ -27,7 +27,7 @@ export async function getFlyers() {
 
 export default function Card() {
 
-  const { t } = useTranslation();
+  const { t , i18n} = useTranslation("global");
 
   const [flyers, setFlyers] = useState([]);
 
@@ -61,7 +61,7 @@ export default function Card() {
         <input className="border-2 border-gray-300 h-9 px-2 pr-6 rounded-lg shadow-2xl" type="text" placeholder="Buscador..."/>
         <div className="border-2 border-gray-300 py-1 px-2 shadow-2xl text-black rounded-md">
           <button onClick={toggleModal} className="flex justify-center items-center gap-1">
-            <p className="">Filtro</p>
+            <p className="">{t('filter')}</p>
             <Icon icon="mi:filter" />
           </button>
           {isModalOpen && (
