@@ -16,6 +16,8 @@ body {
 }
 
 .calendar{
+    color: #000;
+
     font-family: 'Rubik Mono One', monospace;
 
     border-radius: 5px;
@@ -41,9 +43,6 @@ body {
    
 }
 
-.filter{
-    background-color: #CF5E51;
-}
 
 .burger{
     background-color: rgba(247, 247, 247);
@@ -96,11 +95,11 @@ body {
 
 
 .card {
-    margin: 1rem; 
+    margin: 2rem; 
     position: relative;
     perspective: 1000px;
-    width: 250px; /* Ajusta el ancho según tus necesidades */
-    height: 400px; /* Ajusta la altura según tus necesidades */
+    width: 320px; /* Ajusta el ancho según tus necesidades */
+    height: 500px; /* Ajusta la altura según tus necesidades */
 
 }
 
@@ -111,7 +110,7 @@ body {
     width: 100%;
     height: 100%;
     border-radius: 5px;
-    border: 5px solid white;
+    border: 3px solid white;
     box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.5);
 }
 
@@ -164,7 +163,7 @@ body {
 
 .flip-icon {
     background-color: white;
-    border: 1px solid black;
+    border: 1px solid #000;
     border-radius: 100%;
     width: 40px;
     height: 40px;

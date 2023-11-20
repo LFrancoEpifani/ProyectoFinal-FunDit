@@ -2,9 +2,6 @@ import React from 'react'
 import { Icon } from '@iconify/react'
 import { useState } from 'react';
 
-
-
-
 export default function FilterModal({toggleModal}) {
 
     const [isActive, setIsActive] = useState({
@@ -38,27 +35,27 @@ export default function FilterModal({toggleModal}) {
                 <h2 className='title-cat'>Dia</h2>
                 <div className='lunes flex flex-wrap justify-start items-center gap-2 mb-8 mt-2'>
                     <p>Lunes</p>
-                        <div className={`w-14 h-7 flex items-center rounded-full p-1 cursor-pointer my-1 ${isActive['Lunes'] ? 'bg-[rgba(205,48,72,0.9)] justify-end' : 'bg-[rgba(0,0,0,0.8)] justify-start'}`}
+                        <div className={`w-14 h-7 flex items-center rounded-full p-1 cursor-pointer my-1 ${isActive['Lunes'] ? 'bg-[rgba(56,230,76,0.75)] justify-end' : 'bg-[rgba(0,0,0,0.8)] justify-start'}`}
                             onClick={() => toggleSwitch('Lunes')}>
                         <div className="bg-white w-5 h-5 rounded-full shadow-md"></div>
                     </div>
                     <p>Martes</p>
-                        <div className={`w-14 h-7 flex items-center rounded-full p-1 cursor-pointer my-1 ${isActive['Martes'] ? 'bg-[rgba(205,48,72,0.9)] justify-end' : 'bg-[rgba(0,0,0,0.8)] justify-start'}`}
+                        <div className={`w-14 h-7 flex items-center rounded-full p-1 cursor-pointer my-1 ${isActive['Martes'] ? 'bg-[rgba(56,230,76,0.75)] justify-end' : 'bg-[rgba(0,0,0,0.8)] justify-start'}`}
                             onClick={() => toggleSwitch('Martes')}>
                         <div className="bg-white w-5 h-5 rounded-full shadow-md"></div>
                     </div>
                     <p>Miércoles</p>
-                        <div className={`w-14 h-7 flex items-center rounded-full p-1 cursor-pointer my-1 ${isActive['Miércoles'] ? 'bg-[rgba(205,48,72,0.9)] justify-end' : 'bg-[rgba(0,0,0,0.8)] justify-start'}`}
+                        <div className={`w-14 h-7 flex items-center rounded-full p-1 cursor-pointer my-1 ${isActive['Miércoles'] ? 'bg-[rgba(56,230,76,0.75)] justify-end' : 'bg-[rgba(0,0,0,0.8)] justify-start'}`}
                             onClick={() => toggleSwitch('Miércoles')}>
                         <div className="bg-white w-5 h-5 rounded-full shadow-md"></div>
                     </div>
                     <p>Jueves</p>
-                        <div className={`w-14 h-7 flex items-center rounded-full p-1 cursor-pointer my-1 ${isActive['Jueves'] ? 'bg-[rgba(205,48,72,0.9)] justify-end' : 'bg-[rgba(0,0,0,0.8)] justify-start'}`}
+                        <div className={`w-14 h-7 flex items-center rounded-full p-1 cursor-pointer my-1 ${isActive['Jueves'] ? 'bg-[rgba(56,230,76,0.75)] justify-end' : 'bg-[rgba(0,0,0,0.8)] justify-start'}`}
                             onClick={() => toggleSwitch('Jueves')}>
                         <div className="bg-white w-5 h-5 rounded-full shadow-md"></div>
                     </div>
                     <p>Viernes</p>
-                        <div className={`w-14 h-7 flex items-center rounded-full p-1 cursor-pointer my-1 ${isActive['Viernes'] ? 'bg-[rgba(205,48,72,0.9)] justify-end' : 'bg-[rgba(0,0,0,0.8)] justify-start'}`}
+                        <div className={`w-14 h-7 flex items-center rounded-full p-1 cursor-pointer my-1 ${isActive['Viernes'] ? 'bg-[rgba(56,230,76,0.75)] justify-end' : 'bg-[rgba(0,0,0,0.8)] justify-start'}`}
                             onClick={() => toggleSwitch('Viernes')}>
                         <div className="bg-white w-5 h-5 rounded-full shadow-md"></div>
                     </div>
@@ -68,27 +65,27 @@ export default function FilterModal({toggleModal}) {
             <h2 className='title-cat'>Categorias</h2>
                 <div className='lunes flex flex-wrap justify-center items-center gap-2 mb-8 mt-2'>
                     <p>Arte</p>
-                        <div className={`w-14 h-7 flex items-center rounded-full p-1 cursor-pointer my-1 ${isActive['Arte'] ? 'bg-[rgba(205,48,72,0.9)] justify-end' : 'bg-[rgba(0,0,0,0.8)] justify-start'}`}
+                        <div className={`w-14 h-7 flex items-center rounded-full p-1 cursor-pointer my-1 ${isActive['Arte'] ? 'bg-[rgba(56,230,76,0.75)] justify-end' : 'bg-[rgba(0,0,0,0.8)] justify-start'}`}
                             onClick={() => toggleSwitch('Arte')}>
                         <div className="bg-white w-5 h-5 rounded-full shadow-md"></div>
                     </div>
                     <p>Música</p>
-                        <div className={`w-14 h-7 flex items-center rounded-full p-1 cursor-pointer my-1 ${isActive['Música'] ? 'bg-[rgba(205,48,72,0.9)] justify-end' : 'bg-[rgba(0,0,0,0.8)] justify-start'}`}
+                        <div className={`w-14 h-7 flex items-center rounded-full p-1 cursor-pointer my-1 ${isActive['Música'] ? 'bg-[rgba(56,230,76,0.75)] justify-end' : 'bg-[rgba(0,0,0,0.8)] justify-start'}`}
                             onClick={() => toggleSwitch('Música')}>
                         <div className="bg-white w-5 h-5 rounded-full shadow-md"></div>
                     </div>
                     <p>Alternativo</p>
-                        <div className={`w-14 h-7 flex items-center rounded-full p-1 cursor-pointer my-1 ${isActive['Alternativo'] ? 'bg-[rgba(205,48,72,0.9)] justify-end' : 'bg-[rgba(0,0,0,0.8)] justify-start'}`}
+                        <div className={`w-14 h-7 flex items-center rounded-full p-1 cursor-pointer my-1 ${isActive['Alternativo'] ? 'bg-[rgba(56,230,76,0.75)] justify-end' : 'bg-[rgba(0,0,0,0.8)] justify-start'}`}
                             onClick={() => toggleSwitch('Alternativo')}>
                         <div className="bg-white w-5 h-5 rounded-full shadow-md"></div>
                     </div>
                     <p>Baile</p>
-                        <div className={`w-14 h-7 flex items-center rounded-full p-1 cursor-pointer my-1 ${isActive['Baile'] ? 'bg-[rgba(205,48,72,0.9)] justify-end' : 'bg-[rgba(0,0,0,0.8)] justify-start'}`}
+                        <div className={`w-14 h-7 flex items-center rounded-full p-1 cursor-pointer my-1 ${isActive['Baile'] ? 'bg-[rgba(56,230,76,0.75)] justify-end' : 'bg-[rgba(0,0,0,0.8)] justify-start'}`}
                             onClick={() => toggleSwitch('Baile')}>
                         <div className="bg-white w-5 h-5 rounded-full shadow-md"></div>
                     </div>
                     <p>Literatura</p>
-                        <div className={`w-14 h-7 flex items-center rounded-full p-1 cursor-pointer my-1 ${isActive['Literatura'] ? 'bg-[rgba(205,48,72,0.9)] justify-end' : 'bg-[rgba(0,0,0,0.8)] justify-start'}`}
+                        <div className={`w-14 h-7 flex items-center rounded-full p-1 cursor-pointer my-1 ${isActive['Literatura'] ? 'bg-[rgba(56,230,76,0.75)] justify-end' : 'bg-[rgba(0,0,0,0.8)] justify-start'}`}
                             onClick={() => toggleSwitch('Literatura')}>
                         <div className="bg-white w-5 h-5 rounded-full shadow-md"></div>
                     </div>
