@@ -1,11 +1,11 @@
 import React from "react";
 import { Icon } from "@iconify/react";
 import { useState } from "react";
-import Logo from "../../assets/FunditLogo.png";
+import Logo from "../../assets/onlyF.png";
 import BurgerContent from "./BurgerContent";
 import Login from "../Login/Login";
 import { useTranslation } from "react-i18next";
-import { changeLanguage } from "i18next";
+
 
 
 export default function NavBar() { 
@@ -45,13 +45,13 @@ export default function NavBar() {
 
           {/* Contenedor Central */}
           <div className="flex-1 flex justify-center">
-            <img className="imagenLogo" src={Logo} alt="FunDit Logo" />
+            <img className="imagenLogo object-contain" src={Logo} alt="FunDit Logo" />
           </div>
 
           {/* Contenedor Derecho */}
           <div className="flex-1 flex justify-end gap-2 items-center">
               <Login />
-            <button>
+            <div className="flex justify-center items-center">
               {isLenguage ? (
                     <button onClick={() => handleChangeLenguage("en")}>
                         <Icon className="w-7 h-7" icon="openmoji:flag-united-states" />
@@ -61,7 +61,7 @@ export default function NavBar() {
                     <Icon className="w-7 h-7" icon="openmoji:flag-spain" />
                   </button>
               )}
-            </button>
+            </div>
           </div>
         </nav>
       </div>
