@@ -1,6 +1,6 @@
 import React from 'react'
 import NavBar from '../NavBar/NavBar'
-import Fondo from '../../assets/background.png'
+import Fondo from '../../assets/background2.png'
 
 
 
