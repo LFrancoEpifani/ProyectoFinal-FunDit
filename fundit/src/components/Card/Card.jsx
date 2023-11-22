@@ -58,10 +58,10 @@ export default function Card() {
     <div className="text-center">
       <h2 className="calendar text-lg mt-8 mb-4 mx-8 border-gray-300">{t('events')}</h2>
       <div className="flex justify-center items-center gap-2">
-        <input className="border-2 border-gray-300 h-9 px-2 pr-6 rounded-lg shadow-2xl" type="text" placeholder="Buscador..."/>
+        <input className="border-2 border-gray-300 h-9 pr-2 rounded-lg shadow-2xl" type="text" placeholder="Buscador..."/>
         <div className="border-2 border-gray-300 py-1 px-2 shadow-2xl text-black rounded-md">
           <button onClick={toggleModal} className="flex justify-center items-center gap-1">
-            <p className="">{t()}</p>
+            <p className="">{t("filter")}</p>
             <Icon icon="mi:filter" />
           </button>
           {isModalOpen && (

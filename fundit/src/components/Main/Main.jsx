@@ -1,24 +1,29 @@
 import React from 'react'
-import NavBar from '../NavBar/NavBar'
-import Fondo from '../../assets/background2.png'
+import Fondo from '../../assets/bgHD.png'
+import { useTranslation } from 'react-i18next';
+import { Link } from "react-router-dom";
+
 
 
 
 export default function Main() {
+
+  const { t , i18n} = useTranslation("global");
+
   return (
   <div>
-    <NavBar/>
     <div className='bienvenida'>
     <h2 className='text-center text-2xl m-4'>
-        Bienvenido a <span className='font-bold fundit'>FUNDIT</span>
+        {t("welcome")} <span className='font-bold fundit'>{t("fundit")}</span>
       </h2>
-      <img className='w-full h-full' src={Fondo} alt="" />
+     <div>
+      <img className='w-full h-full relative' src={Fondo} alt="" />
+     <Link to={"/flyers"}>
+      <button className='absolute top-59 left-35  cursor-pointer border border-transparent w-24 h-10'></button>
+     </Link>
+     </div>
+     
     </div>
-    <div className='flex justify-center items-center'>
-    <button className='text-black text-center rounded-full w-40 h-8 font-semibold tracking-wider border border-black shadow-md'>
-      CARTELERA
-    </button> 
-  </div>
   </div>
   )
 }

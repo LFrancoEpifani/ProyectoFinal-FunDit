@@ -1,4 +1,11 @@
 {
   "events": "Events",
-  "filter": "Filter"
+  "filter": "Filter",
+  "welcome": "Welcome to",
+  "fundit": "FUNDIT",
+  "home": "Home",
+  "navEvents": "Events",
+  "tickets": "Tickets",
+  "public": "Create",
+  "profile": "Profile"
 }

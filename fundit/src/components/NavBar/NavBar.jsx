@@ -14,7 +14,7 @@ export default function NavBar() {
 
   const handleChangeLenguage = (lang) => {
     i18n.changeLanguage(lang);
-    setIsLenguage(lang === "es"); // Cambia el estado de la bandera dependiendo del idioma
+    setIsLenguage(lang === "es");
   }
 
   const [isMenuOpen, setMenuOpen] = useState(false);
@@ -22,10 +22,7 @@ export default function NavBar() {
 
   const toggleMenu = () => {
     setMenuOpen(!isMenuOpen);
-  };
-
-
-  
+  };  
   
   return (
     <div className="flex justify-between">

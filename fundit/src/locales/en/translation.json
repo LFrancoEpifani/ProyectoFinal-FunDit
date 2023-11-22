@@ -1,4 +1,11 @@
 {
   "events": "Cartelera",
-  "filter": "Filtro"
+  "filter": "Filtro",
+  "welcome": "Bienvenido a",
+  "fundit": "FUNDIT",
+  "home": "Inicio",
+  "navEvents": "Eventos",
+  "tickets": "Entradas",
+  "public": "Publicación",
+  "profile": "Perfil"
 }

@@ -108,8 +108,8 @@ body {
     margin: 2rem; 
     position: relative;
     perspective: 1000px;
-    width: 320px; /* Ajusta el ancho según tus necesidades */
-    height: 500px; /* Ajusta la altura según tus necesidades */
+    width: 250px; 
+    height: 400px; 
 
 }
 

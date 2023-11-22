@@ -1,13 +1,13 @@
 import React from "react";
 import Main from "./components/Main/Main";
+import NavBar from "./components/NavBar/NavBar";
 
 
-function App() {
+export default function Home() {
   return (
-    <div className="w-full">
+    <div>
+      <NavBar/>
       <Main />
     </div>
   );
 }
-
-export default App;
