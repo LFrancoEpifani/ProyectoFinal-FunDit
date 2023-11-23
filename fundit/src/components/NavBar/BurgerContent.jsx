@@ -6,9 +6,13 @@ import Logo from '../../assets/sinfoto.png'
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 
-export default function BurgerContent({ toggleMenu }) {
 
+export default function BurgerContent({ setMenuOpen, setOpenPublicationModal }) {
 
+    const closeNavBarAndOpenPublicationModal = () =>{
+        setMenuOpen(false);
+        setOpenPublicationModal(true);
+    }
     const { t , i18n} = useTranslation("global");
 
     const { user, isAuthenticated, isLoading } = useAuth0();
@@ -21,7 +25,7 @@ export default function BurgerContent({ toggleMenu }) {
     <div className='bg-opacity-60 bg-black fixed top-0 left-0 h-screen w-full flex justify-center items-center z-50 cursor-pointer'>
       <div className='burger h-screen w-2/3 fixed top-0 left-0 shadow-2xl'>
       <div className=''>
-            <Icon onClick={toggleMenu} className='text-4xl ml-auto my-1 mr-1 transition-all duration-500 ease-in' icon='iconamoon:close-thin' />
+            <Icon onClick={() => setMenuOpen(false)} className='text-4xl ml-auto my-1 mr-1 transition-all duration-500 ease-in' icon='iconamoon:close-thin' />
           </div>
           {!isAuthenticated && (
             <div className='flex justify-start items-end mx-3 gap-1'>
@@ -62,7 +66,7 @@ export default function BurgerContent({ toggleMenu }) {
             <div className='border border-black bg-black rounded-full w-10 h-10 flex justify-center items-center'>
                 <Icon className=' text-3xl' icon="ic:round-plus" color='white'/>
             </div>
-                <button className='font-semibold text-lg'>{t('public')}</button>
+                <button onClick={closeNavBarAndOpenPublicationModal} className='font-semibold text-lg'>{t('public')}</button>
             </div>
             <div className='flex items-center gap-6 mb-6'>
             <div className='border border-black bg-black rounded-full w-10 h-10 flex justify-center items-center'>

@@ -5,15 +5,13 @@ import Flyers from './Flyers'
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "/ProyectoFinal-FunDit/",
     element: <Home/>,
   },
   {
-    path:"/flyers",
+    path: "/ProyectoFinal-FunDit/flyers",
     element: <Flyers/>
-
   },
-  
 ]);
 
 export default router;

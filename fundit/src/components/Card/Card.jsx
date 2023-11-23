@@ -15,10 +15,6 @@ export async function getFlyers() {
     location,
     schedule,
     "imageUrl": image.asset->url,
-    socialMedia[]{
-      platform,
-      url
-    }
   }`;
 
   const flyers = await client.fetch(query, { cache: "no-store" });
@@ -26,6 +22,7 @@ export async function getFlyers() {
 }
 
 export default function Card() {
+
 
   const { t , i18n} = useTranslation("global");
 
@@ -36,11 +33,12 @@ export default function Card() {
   const [isModalOpen, setModalOpen] = useState(false);
 
 
+  console.log(flyers)
+
   useEffect(() => {
     getFlyers().then(flyersData => {
       const flyersWithDefaults = flyersData.map(flyer => ({
         ...flyer,
-        socialMedia: flyer.socialMedia || []
       }));
       setFlyers(flyersWithDefaults);
     });
@@ -55,7 +53,7 @@ export default function Card() {
   };
 
   return ( 
-    <div className="text-center">
+    <div className="text-center bg-flyers">
       <h2 className="calendar text-lg mt-8 mb-4 mx-8 border-gray-300">{t('events')}</h2>
       <div className="flex justify-center items-center gap-2">
         <input className="border-2 border-gray-300 h-9 pr-2 rounded-lg shadow-2xl" type="text" placeholder="Buscador..."/>
@@ -101,7 +99,7 @@ export default function Card() {
               </div>
               <div className="flex justify-between m-4 text-md">
                 <p>{flyer.schedule}hs</p>
-                  <p className="capitalize" style={{ color: flyer.price.toLowerCase() === 'gratis' ? '#16FF00' : 'inherit' }}>
+                  <p className="capitalize" style={{ color: flyer.price === 0 ? 'Gratis' : '' }}>
                   {flyer.price}
                   </p>
                 </div>

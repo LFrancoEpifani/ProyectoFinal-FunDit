@@ -1,10 +1,10 @@
 import React from "react";
 import { Icon } from "@iconify/react";
 import { useState } from "react";
-import Logo from "../../assets/onlyF.png";
-import BurgerContent from "./BurgerContent";
+import { Link } from "react-router-dom";
 import Login from "../Login/Login";
 import { useTranslation } from "react-i18next";
+import PublicationModal from "../PublicationModal/PublicationModal";
 
 
 
@@ -17,51 +17,39 @@ export default function NavBar() {
     setIsLenguage(lang === "es");
   }
 
-  const [isMenuOpen, setMenuOpen] = useState(false);
   const [isLenguage, setIsLenguage] = useState(false);
-
-  const toggleMenu = () => {
-    setMenuOpen(!isMenuOpen);
-  };  
+  const [openPublicationModal, setOpenPublicationModal] = useState(false);
   
   return (
-    <div className="flex justify-between">
-      <div className="navbar w-full p-1">
-        <nav className="p-1 flex justify-between items-center">
-          {/* Contenedor Izquierdo */}
-          <div className="flex-1 flex justify-start">
-            <button onClick={toggleMenu}>
-              <Icon
-                className={`menu-burger ${isMenuOpen ? "hidden" : ""}`}
-                icon="material-symbols:menu"
-                color="white"
-              />
-            </button>
-            {isMenuOpen && <BurgerContent toggleMenu={toggleMenu} />}
-          </div>
-
-          {/* Contenedor Central */}
-          <div className="flex-1 flex justify-center">
-            <img className="imagenLogo object-contain" src={Logo} alt="FunDit Logo" />
-          </div>
-
-          {/* Contenedor Derecho */}
-          <div className="flex-1 flex justify-end gap-2 items-center">
+   <>
+    
+        <nav className="bg-white m-4">
+           <div className="flex justify-between">
+           <div className="flex">
+              <Link to={"/ProyectoFinal-FunDit/"}>
+                <h2 className='font-porter text-xl rounded-lg w-7 h-7 '>F<span className="undit">UNDIT</span></h2>
+              </Link>
+            </div>
+              <div className="flex gap-4 justify-center items-center">
+              <Icon className='w-5 h-5' icon="ion:home" color='black'/>
+              <Icon className='w-5 h-5' icon="ion:ticket" color='black'/>
+               <Icon className='w-5 h-5' icon="mdi:event" color='black'/>
               <Login />
-            <div className="flex justify-center items-center">
+
+              
               {isLenguage ? (
                     <button onClick={() => handleChangeLenguage("en")}>
-                        <Icon className="w-7 h-7" icon="openmoji:flag-united-states" />
+                        <Icon className='w-5 h-5' icon="ion:earth-sharp" color="black" />
                     </button>
               ) : (
                   <button onClick={() => handleChangeLenguage("es")}>
-                    <Icon className="w-7 h-7" icon="openmoji:flag-spain" />
+                    <Icon className='w-5 h-5' icon="ion:earth-sharp" color="black"/>
                   </button>
               )}
-            </div>
-          </div>
+              </div>
+           </div>
         </nav>
-      </div>
-    </div>
+   {openPublicationModal && <PublicationModal setOpenPublicationModal={setOpenPublicationModal} />}
+   </>
   );
 }

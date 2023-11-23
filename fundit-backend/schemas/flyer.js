@@ -34,28 +34,5 @@ export default {
       title: 'Horario',
       type: 'string',
     },
-    // Nuevo campo para enlaces a redes sociales
-    {
-      name: 'socialMedia',
-      title: 'Redes Sociales',
-      type: 'array',
-      of: [
-        {
-          type: 'object',
-          fields: [
-            {
-              name: 'platform',
-              title: 'Plataforma',
-              type: 'string',
-            },
-            {
-              name: 'urlFacebook',
-              title: 'URL',
-              type: 'url',
-            },
-          ],
-        },
-      ],
-    },
   ],
 };

@@ -1,13 +1,14 @@
 import React from "react";
-import Main from "./components/Main/Main";
-import NavBar from "./components/NavBar/NavBar";
+import MainMovil from "./components/Main/MainMovil";
 
 
 export default function Home() {
+
+
   return (
-    <div>
-      <NavBar/>
-      <Main />
-    </div>
+    
+      <div className="background-principal">
+        <MainMovil/>  
+      </div>
   );
 }

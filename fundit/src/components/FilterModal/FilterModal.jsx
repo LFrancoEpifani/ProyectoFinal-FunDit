@@ -10,6 +10,8 @@ export default function FilterModal({toggleModal}) {
         Miércoles: false,
         Jueves: false,
         Viernes: false,
+        Sábado: false,
+        Domingo: false,
         Arte: false,
         Música: false,
         Teatro: false,
@@ -52,6 +54,16 @@ export default function FilterModal({toggleModal}) {
                     <p>Jueves</p>
                         <div className={`w-14 h-7 flex items-center rounded-full p-1 cursor-pointer my-1 ${isActive['Jueves'] ? 'bg-[rgba(56,230,76,0.75)] justify-end' : 'bg-[rgba(0,0,0,0.8)] justify-start'}`}
                             onClick={() => toggleSwitch('Jueves')}>
+                        <div className="bg-white w-5 h-5 rounded-full shadow-md"></div>
+                    </div>
+                    <p>Viernes</p>
+                        <div className={`w-14 h-7 flex items-center rounded-full p-1 cursor-pointer my-1 ${isActive['Viernes'] ? 'bg-[rgba(56,230,76,0.75)] justify-end' : 'bg-[rgba(0,0,0,0.8)] justify-start'}`}
+                            onClick={() => toggleSwitch('Viernes')}>
+                        <div className="bg-white w-5 h-5 rounded-full shadow-md"></div>
+                    </div>
+                    <p>Sábado</p>
+                        <div className={`w-14 h-7 flex items-center rounded-full p-1 cursor-pointer my-1 ${isActive['Sábado'] ? 'bg-[rgba(56,230,76,0.75)] justify-end' : 'bg-[rgba(0,0,0,0.8)] justify-start'}`}
+                            onClick={() => toggleSwitch('Sábado')}>
                         <div className="bg-white w-5 h-5 rounded-full shadow-md"></div>
                     </div>
                     <p>Viernes</p>

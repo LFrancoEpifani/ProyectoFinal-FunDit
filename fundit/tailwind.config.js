@@ -6,6 +6,9 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        'porter': ['Porter Sans Block', 'sans-serif']
+      },
       inset: {
         '0': '0',
         auto: 'auto',
@@ -40,6 +43,15 @@ export default {
         '90vh': '90vh',
         '95vh': '95vh',
         '100vh': '100vh',
+      },
+      width: {
+        '10': '10%',
+        '50': '50%',
+        '70': '70%',
+        '80': '80%',
+        '90': '90%',
+        '95': '95%',
+        '100': '100%',
       }
     },
     screens: {
