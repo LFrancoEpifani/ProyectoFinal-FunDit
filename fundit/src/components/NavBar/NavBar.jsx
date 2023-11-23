@@ -23,7 +23,7 @@ export default function NavBar() {
   return (
    <>
     
-        <nav className="bg-white my-2 md:mx-20 lg:mx-30 xl:mx-40">
+        <nav className="bg-white m-4 md:mx-20 lg:mx-30 xl:mx-40">
            <div className="flex justify-between">
            <div className="flex">
               <Link to={"/ProyectoFinal-FunDit/"}>
