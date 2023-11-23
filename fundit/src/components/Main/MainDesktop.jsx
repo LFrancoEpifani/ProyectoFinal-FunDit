@@ -16,19 +16,18 @@ export default function MainDesktop() {
     <div >
     <NavBar/>
     <div className=''>
-    <div className='background-principal p-4'>
-        <div className='font-semibold flex justify-center items-center gap-4'>
+    <div className='background-principal p-4 my-8'>
+        <div className='font-semibold flex justify-center items-center gap-52'>
            <div>
-           
-            <div className='bienvenida-fundit m-8 font-light flex justify-start '>
+            <div className='bienvenida-fundit text-6xl my-12 font-light flex justify-start '>
               <p>{t("explore")} <br/> {t("the")} <span className='text-blue-500 font-bold'> {t("experience")}</span> <br/> {t("found")}<br/> {t("click")}</p>
             </div>
            
             <div className='grid grid-cols-2 justify-center items-center gap-4 rounded-xl'>
                <Link to={"/ProyectoFinal-FunDit/flyers"}>
-                <button className='btn-event button-3d '>{t("search")}</button>
+                <button className='btn-event-movil button-3d-movil '>{t("search")}</button>
                </Link>
-                <button onClick={() => {setOpenPublicationModal(true)}} className='btn-create-event button-3d'>{t("create")}</button>
+                <button onClick={() => {setOpenPublicationModal(true)}} className='btn-create-event-movil button-3d-movil'>{t("create")}</button>
             </div>
            </div>
               <div className='flex flex-col justify-center'>

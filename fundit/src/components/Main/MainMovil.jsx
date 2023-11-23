@@ -15,30 +15,23 @@ export default function MainMovil() {
   return (
     <div className='text-center'>
     <NavBar/>
-    <div className=''>
-    <div className=''>
-        <div className='font-semibold grid grid-cols-1 justify-center items-center gap-4'>
-           <div>
-           
-            <div className='bienvenida-fundit-movil'>
-              <p>{t("explore")} <br/> {t("the")} <span className='text-blue-500 font-bold'> {t("experience")}</span> <br/> {t("found")}<br/> {t("click")}</p>
+        <div className='font-semibold grid grid-cols-1 justify-center items-center gap-4  m-6 lg:flex lg:justify-center lg:items-center xl:gap-32'>
+            <div className='bienvenida-fundit-movil text-xl flex justify-center items-center  md:text-5xl md:mt-8 md:leading-snug lg:text:6xl lg:leading-snug xl:flex xl:text-6xl xl:leading-tight '>
+                <p>{t("explore")} <br/> {t("the")} <span className='text-blue-500 font-bold'> {t("experience")}.</span> <br/> {t("found")}<br/> {t("click")}</p>
             </div>
-           </div>
-              <div className=''>
+              <div className='flex flex-wrap'>
                 <img
-                className='w-[240px] border rounded-lg shadow-lg m-auto' 
+                className='w-[240px] p-6 m-auto md:w-[340px] md:mt-8 border rounded-md' 
                     src={Isometric} 
                     alt=''
                 />    
            </div>
         </div>
-        </div>
-        </div>
-        <div className=''>
+        <div className='flex flex-col justify-center items-center text-center gap-2 md:flex md:flex-row md:gap-3 md:justify-center lg:justify-evenly lg:items-center lg:gap-6 lg:mx-56'>
                <Link to={"/ProyectoFinal-FunDit/flyers"}>
-                <button className='btn-event-movil button-3d-movil'>{t("search")}</button>
+                <button className='btn-event-movil w-52 h-12 p-4 md:p-3 md:w-60 md:h-10 md:text-center xl:text-lg xl:h-12 xl:w-72 xl:text-center'>{t("search")}</button>
                </Link>
-                <button onClick={() => {setOpenPublicationModal(true)}} className='btn-create-event-movil button-3d-movil'>{t("create")}</button>
+                <button onClick={() => {setOpenPublicationModal(true)}} className='btn-create-event-movil w-52 h-12 p-4 md:p-3 md:w-60 md:h-10 md:text-center xl:text-lg xl:h-12 xl:w-72 xl:text-center'>{t("create")}</button>
             </div>
     {openPublicationModal && (
       <div>

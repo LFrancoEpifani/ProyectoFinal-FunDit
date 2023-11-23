@@ -10,7 +10,7 @@ export default function Login() {
   return (
     <>
         <button className='flex justify-center items-center gap-10' onClick={() => loginWithRedirect()}>
-              <Icon className='w-5 h-5' icon="mingcute:user-4-fill" color='black'/>
+              <Icon className='w-5 h-5 lg:w-7 lg:h-7' icon="mingcute:user-4-fill" color='black'/>
         </button>
     </>
   )
