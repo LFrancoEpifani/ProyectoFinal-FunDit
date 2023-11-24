@@ -21,17 +21,17 @@ export default function MainMovil() {
             </div>
               <div className='flex flex-wrap'>
                 <img
-                className='w-[240px] p-6 m-auto md:w-[340px] md:mt-8 border rounded-md' 
+                className='w-[280px] p-6 m-auto md:w-[340px] md:mt-8 border rounded-md' 
                     src={Isometric} 
                     alt=''
                 />    
            </div>
         </div>
-        <div className='flex flex-col justify-center items-center text-center gap-2 md:flex md:flex-row md:gap-3 md:justify-center lg:justify-evenly lg:items-center lg:gap-6 lg:mx-56'>
+        <div className='flex justify-center items-center text-center gap-2 sm:flex-col md:flex md:justify-start lg:justify-evenly lg:items-center lg:gap-6 lg:mx-56 xl:flex-row'>
                <Link to={"/ProyectoFinal-FunDit/flyers"}>
-                <button className='btn-event-movil w-52 h-12 p-4 md:p-3 md:w-60 md:h-10 md:text-center xl:text-lg xl:h-12 xl:w-72 xl:text-center'>{t("search")}</button>
+                <button className='btn-event-movil w-56 h-10 p-3 md:p-3 md:w-60 md:h-10 md:text-center xl:text-lg xl:h-12 xl:w-72 xl:text-center'>{t("search")}</button>
                </Link>
-                <button onClick={() => {setOpenPublicationModal(true)}} className='btn-create-event-movil w-52 h-12 p-4 md:p-3 md:w-60 md:h-10 md:text-center xl:text-lg xl:h-12 xl:w-72 xl:text-center'>{t("create")}</button>
+                <button onClick={() => {setOpenPublicationModal(true)}} className='btn-create-event-movil w-56 h-10 p-3 md:p-3 md:w-60 md:h-10 md:text-center xl:text-lg xl:h-12 xl:w-72 xl:text-center'>{t("create")}</button>
             </div>
     {openPublicationModal && (
       <div>
