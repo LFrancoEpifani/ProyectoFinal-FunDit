@@ -26,5 +26,6 @@
   "music": "Music",
   "dance": "Dance",
   "alternative": "Alternative",
-  "literature": "Literature"
+  "literature": "Literature",
+  "all": "Filter"
 }

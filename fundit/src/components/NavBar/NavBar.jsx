@@ -32,8 +32,12 @@ export default function NavBar() {
               </Link>
             </div>
               <div className="flex gap-4 justify-center items-center cursor-pointer">
+              <Link to={"/ProyectoFinal-FunDit/"}>
               <Icon className='w-5 h-5 lg:w-7 lg:h-7' icon="ion:home" color='black'/>
+              </Link>
+               <Link to={"/ProyectoFinal-FunDit/flyers"}>
                <Icon className='w-5 h-5 lg:w-7 lg:h-7' icon="mdi:event" color='black'/>
+               </Link>
               <Icon onClick={() => setOpenPublicationModal(true)} className='w-5 h-5 lg:w-7 lg:h-7' icon="ph:plus-fill" color='black'/>
 
               {openPublicationModal && (

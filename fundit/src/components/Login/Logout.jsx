@@ -11,7 +11,7 @@ export default function Logout() {
       {isAuthenticated && (
           <div className='flex justify-center items-center'>
             <button onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}>
-              <Icon className=' bg-black rounded-full w-7 h-7 p-1' icon="line-md:log-out" color='white'/>
+              <Icon className=' bg-black rounded-full w-5 h-5 p-1 xl:w-7 xl:h-7' icon="line-md:log-out" color='white'/>
             </button>
             </div>
 

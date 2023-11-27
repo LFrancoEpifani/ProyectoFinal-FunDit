@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Icon } from "@iconify/react";
 import { client } from "../../../../fundit-backend/.sanity/lib/client";
-import PublicationModalImage from "./PublicationModalImage";
 
 export default function PublicationModal({ setOpenPublicationModal }) {
 
@@ -45,7 +44,7 @@ export default function PublicationModal({ setOpenPublicationModal }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     
-    if (!newFlyer.title || !newFlyer.location || !newFlyer.date || !newFlyer.price || !newFlyer.schedule || !newFlyer.category || !newFlyer.description || !newFlyer.image) {
+    if (!newFlyer.title) {
       alert('Por favor, completa todos los campos requeridos.');
       return;
     }
@@ -216,12 +215,17 @@ export default function PublicationModal({ setOpenPublicationModal }) {
         )}
         </div>
       </div>
+      {isEventCreated && (
+        <div className="absolute top-0 left-0 p-4 rounded flex h-full w-full justify-center items-center bg-black bg-opacity-80 gap-2">
+        <p className="text-xl text-white">
+          Evento Publicado
+        </p>
+      <Icon className="text-2xl" icon="mingcute:check-fill" color="green"/>
+      </div>
+      )}
           </form>
-        {isEventCreated && (
-          <div className="absolute top-20 bg-green-200 p-4 rounded">
-            Evento creado
-          </div>
-        )}
+        
+        
       </div>
     </div>
   </div>
