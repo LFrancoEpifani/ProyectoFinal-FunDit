@@ -22,7 +22,7 @@ body {
   .btn-event-movil{
     letter-spacing: 0.1rem;
     border-radius: 3px;
-    background-color: #3391FF;
+    background-color: #F5833E ;
     border: 0.1px solid rgb(199, 199, 199);
     font-family: 'NTR', sans-serif;
     color: #ffffff;
@@ -32,10 +32,10 @@ body {
 .btn-create-event-movil{
     letter-spacing: 0.1rem;
     border-radius: 3px;
-    background-color: #EAF4FF;
+    background-color:  #1D437A;
     border: 0.1px solid rgb(199, 199, 199);
     font-family: 'NTR', sans-serif;
-    color: #3391FF;
+    color: #fff;
     font-weight: 800;
 }
 
@@ -64,15 +64,7 @@ body {
 
 .calendar{
     color: #000;
-
     font-family: 'Rubik Mono One', monospace;
-
-    border-radius: 5px;
-
-
-    border: 2px solid rgb(209, 213, 219);
-    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
-    padding: 0.2rem;
 }
 
 .undit{
@@ -80,7 +72,6 @@ body {
     font-family: 'Monda', sans-serif;
     -webkit-text-stroke: 1px #000;
 }
-
 
 
 .imagenLogo{
@@ -118,10 +109,7 @@ body {
 
 
 
-.navbar{
-    background-color: #f8f8f8;
-   
-}
+
 
 .bienvenida{
     font-family: 'Poppins', sans-serif;

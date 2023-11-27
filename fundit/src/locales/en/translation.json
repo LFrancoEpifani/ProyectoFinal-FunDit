@@ -14,5 +14,18 @@
   "found": "Encuéntralos con",
   "click": "un solo click.",
   "search": "Buscar Eventos",
-  "create": "Crear Evento"
+  "create": "Crear Evento",
+  "monday": "Lunes",
+  "tuesday": "Martes",
+  "wednesday": "Miércoles",
+  "thursday": "Jueves",
+  "friday": "Viernes",
+  "saturday": "Sábado",
+  "sunday": "Domingo",
+  "art": "Arte",
+  "music": "Música",
+  "dance": "Baile",
+  "alternative": "Alternativo",
+  "literature": "Literatura"
+  
 }

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Icon } from "@iconify/react";
 import { client } from "../../../../fundit-backend/.sanity/lib/client";
+import PublicationModalImage from "./PublicationModalImage";
 
 export default function PublicationModal({ setOpenPublicationModal }) {
 
@@ -17,14 +18,16 @@ export default function PublicationModal({ setOpenPublicationModal }) {
   });
 
 
+  const [file, setFile] = useState(null);
   const [previewImage, setPreviewImage] = useState(null);
+  const [isEventCreated, setIsEventCreated] = useState(false);
 
   const today = new Date().toISOString().split('T')[0];
 
 
   const handleOnChange = (e) => {
     const { name, value, files } = e.target;
-    if (name === "image") { // Asegúrate de que el nombre del campo sea "image"
+    if (name === "image") { 
       setNewFlyer({ ...newFlyer, [name]: files[0] });
       
       // Crear una URL para la imagen seleccionada y actualizar el estado de la vista previa
@@ -41,47 +44,80 @@ export default function PublicationModal({ setOpenPublicationModal }) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    try {
-      await client.create(newFlyer);
-    } catch (error) {
-      console.error(error);
+    
+    if (!newFlyer.title || !newFlyer.location || !newFlyer.date || !newFlyer.price || !newFlyer.schedule || !newFlyer.category || !newFlyer.description || !newFlyer.image) {
+      alert('Por favor, completa todos los campos requeridos.');
+      return;
+    }
+  
+    if (newFlyer.image) {
+      try {
+        // Subir la imagen primero
+        const imageAsset = await client.assets.upload('image', newFlyer.image);
+        const imageAssetId = imageAsset._id;
+
+  
+        // Crear el flyer con la referencia de la imagen
+        await client.create({
+          ...newFlyer,
+          image: {
+            _type: 'image',
+            asset: {
+              _type: 'reference',
+              _ref: imageAssetId
+            }
+          }
+        });
+  
+        // Resto del código para resetear el formulario y mostrar mensaje de éxito
+        setNewFlyer({
+          _type: "flyer",
+          title: "",
+          description: "",
+          image: null,
+          price: "",
+          location: "",
+          schedule: "",
+          date: "",
+          category: "",
+        });
+        setPreviewImage(null);
+        setIsEventCreated(true);
+  
+        setTimeout(() => {
+          setIsEventCreated(false);
+        }, 3000); // Desaparece después de 3 segundos
+  
+      } catch (error) {
+        console.error(error);
+      }
+    } else {
+      console.error("No file selected");
     }
   };
+  
+
 
   return (
     <div className="fixed inset-0 bg-gray-500 flex justify-center items-center z-10">
-      <div className="relative rounded-lg shadow-2xl w-80 h-90vh bg-white flex">
-        <div className="file-upload-container p-5">
-        {!previewImage && ( // Esto ocultará el label y el input si hay una imagen de vista previa
-        <>
-          <label htmlFor="file-upload">Subir Archivo</label>
-          <input
-            id="file-upload"
-            className="border border-black p-2 rounded"
-            type="file"
-            name="image"
-            onChange={handleOnChange}
-          />
-        </>
-      )}
-          {previewImage && (
-            <img src={previewImage} alt="Vista previa de la imagen" className="w-full h-full" />
-          )}
-        </div>
-        <div className="form-container border-l border-gray-300 p-5">
-          <button onClick={() => setOpenPublicationModal(false)} className="absolute top-0 right-0 m-2">
-            <Icon className="text-3xl" icon="ic:baseline-close" />
-          </button>
-            <h2 className="create-event text-center m-4">
-                Crear Evento
-            </h2>
-            <hr/>
-          <form onSubmit={handleSubmit} className=" uppercase p-5 formulario">
-          <div className="grid grid-cols-2 justify-center items-center gap-6">
-            <div className="flex flex-col m-2">
-              <label className="m-2">TÍTULO</label>
+    <div className="relative rounded-lg shadow-2xl w-full sm:w-80 h-90vh bg-white flex">
+
+      <div className="form-container border-l border-gray-300 p-5">
+        <button
+          onClick={() => setOpenPublicationModal(false)}
+          className="absolute top-0 right-0 m-2"
+        >
+          <Icon className="text-3xl" icon="ic:baseline-close" />
+        </button>
+        <h2 className="create-event text-center m-4 sm:m-2">Crear Evento</h2>
+        <hr />
+        
+        <form onSubmit={handleSubmit} className="uppercase p-5 formulario sm:p-1 sm:grid sm:grid-cols-1">
+          <div className="sm:grid sm:grid-cols-1 sm:gap-1 grid grid-cols-2 justify-center items-center gap-6">
+            <div className="sm:grid sm:grid-cols-1 sm:justify-center sm:items-center flex flex-col m-2">
+              <label className="m-2 sm:text-center">Título</label>
               <input
-                className="p-2 w-72 h-10 rounded m-1 border-2 border-gray-200"
+                className="sm:w-32 p-2 w-72 h-10 rounded m-1 border-2 border-gray-200"
                 type="text"
                 name="title"
                 placeholder="Nombre del evento"
@@ -89,10 +125,10 @@ export default function PublicationModal({ setOpenPublicationModal }) {
                 onChange={handleOnChange}
               />
             </div>
-            <div className="flex flex-col m-4">
-              <label className="m-2">Dirección</label>
+            <div className="flex flex-col m-4 sm:m-1 sm:grid sm:grid-cols-1 sm:justify-center sm:items-center">
+              <label className="m-2 sm:text-center">Dirección</label>
               <input
-                className="p-2 w-72 h-10 rounded m-1 border-2 border-gray-200"
+                className="sm:w-32 p-2 w-72 h-10 rounded m-1 border-2 border-gray-200"
                 type="text"
                 name="location"
                 placeholder="Calle 123"
@@ -101,11 +137,11 @@ export default function PublicationModal({ setOpenPublicationModal }) {
               />
             </div>
           </div>
-          <div className="grid grid-cols-3 justify-center items-center">
+          <div className="sm:flex sm:flex-wrap grid grid-cols-3 justify-center items-center">
             <div className="flex flex-col gap m-2">
-              <label className="m-2">Fecha</label>
+              <label className="m-2 sm:text-center">Fecha</label>
               <input
-                className="p-2 w-44 h-10 rounded m-1 border-2 border-gray-200"
+                className="sm:w-24 p-2 w-44 h-10 rounded m-1 border-2 border-gray-200"
                 type="date"
                 name="date"
                 min={today}
@@ -113,9 +149,9 @@ export default function PublicationModal({ setOpenPublicationModal }) {
               />
             </div>
             <div className="flex flex-col">
-              <label className="m-2">Precio</label>
+              <label className="m-2  sm:text-center">Precio</label>
               <input
-                className="p-2 w-44 h-10 rounded m-1 border-2 border-gray-200"
+                className="sm:w-24 p-2 w-44 h-10 rounded m-1 border-2 border-gray-200"
                 type="number"
                 name="price"
                 placeholder="0€"
@@ -124,50 +160,70 @@ export default function PublicationModal({ setOpenPublicationModal }) {
               />
             </div>
             <div className="flex flex-col">
-              <label className="m-2">Horario</label>
+              <label className="m-2  sm:text-center">Horario</label>
               <input
-                className="p-2 w-44 h-10 rounded m-1 border-2 border-gray-200"
+                className="sm:w-24 sm:m-2 p-2 w-44 h-10 rounded m-1 border-2 border-gray-200"
                 type="time"
                 name="schedule"
                 onChange={handleOnChange}
               />
             </div>
           </div>
-          <div className="grid grid-cols-2 justify-center items-center gap-6">
-            <div className="flex flex-col m-4">
-              <label className="m-2">Categoria</label>
+          <div className="grid grid-cols-2 justify-center items-center gap-6 sm:gap-4 ">
+            <div className="flex flex-col m-4 sm:m-1 ">
+              <label className="m-2  sm:text-center">Categoria</label>
               <select
                 name="category"
                 onChange={handleOnChange}
-                className="p-2 w-72 h-10 rounded m-1 border-2 border-gray-200"
+                className="sm:w-24 p-2 w-72 h-10 rounded m-1 border-2 border-gray-200"
               >
-                <option value="musica">Música</option>
-                <option value="arte">Arte</option>
-                <option value="alternativo">Alternativo</option>
-                <option value="literatura">Literatura</option>
-                <option value="baile">Baile</option>
-                <option value="teatro">Teatro</option>
+                <option className="" value="musica">Música</option>
+                <option className="" value="arte">Arte</option>
+                <option className="" value="alternativo">Alternativo</option>
+                <option className="" value="literatura">Literatura</option>
+                <option className="" value="baile">Baile</option>
+                <option className="" value="teatro">Teatro</option>
               </select>
             </div>
-            <div className="flex flex-col m-4">
-              <label className="m-2">Descripción</label>
+            <div className="flex flex-col m-4 sm:m-1">
+              <label className="m-2  sm:text-center">Descripción</label>
               <input
-                className="w-72 h-10 rounded m-1 border-2 border-gray-200"
+                className="sm:w-24 w-72 h-10 rounded m-1 border-2 border-gray-200"
                 type="text"
                 name="description"
-                maxLength="50"
+                minLength="100"
+                maxLength="150"
                 placeholder="Descripción del evento"
                 onChange={handleOnChange}
               />
             </div>
           </div>
           <div className="flex justify-center items-center">
-            <button className='text-black m-10 border border-black w-32 h-9 rounded ' type='submit'>Crear</button>
-          </div>
+            <button className='text-black m-1 border border-black w-28 h-9 rounded sm:m-4' type='submit'>Crear</button>
           
-        </form>
+          <div className="file-upload-container p-5">
+        {!previewImage && (
+          <>
+            <label htmlFor="file-upload"></label>
+            <input
+              id="file-upload"
+              className="text-black m-1 border border-black w-28 h-9 rounded "
+              type="file"
+              name="image"
+              onChange={handleOnChange}
+            />
+          </>
+        )}
         </div>
       </div>
+          </form>
+        {isEventCreated && (
+          <div className="absolute top-20 bg-green-200 p-4 rounded">
+            Evento creado
+          </div>
+        )}
+      </div>
     </div>
-  );
+  </div>
+);
 }

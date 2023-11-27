@@ -17,7 +17,7 @@ export default function MainMovil() {
     <NavBar/>
         <div className='font-semibold grid grid-cols-1 justify-center items-center gap-4  m-6 lg:flex lg:justify-center lg:items-center xl:gap-32'>
             <div className='bienvenida-fundit-movil text-xl flex justify-center items-center  md:text-5xl md:mt-8 md:leading-snug lg:text:6xl lg:leading-snug xl:flex xl:text-6xl xl:leading-tight '>
-                <p>{t("explore")} <br/> {t("the")} <span className='text-blue-500 font-bold'> {t("experience")}.</span> <br/> {t("found")}<br/> {t("click")}</p>
+                <p>{t("explore")} <br/> {t("the")} <span className='text-blue-800 font-bold'> {t("experience")}.</span> <br/> {t("found")}<br/> {t("click")}</p>
             </div>
               <div className='flex flex-wrap'>
                 <img

@@ -4,25 +4,19 @@ import {Icon} from '@iconify/react'
 
 export default function Logout() {
 
-  const {isAuthenticated, isLoading, logout } = useAuth0();
-
-    if (isLoading) {
-      return <div>Loading ...</div>;
-    }
+  const {isAuthenticated, logout } = useAuth0();
 
   return (
-      isAuthenticated && (
-       
-          <div className='flex items-center gap-6 mb-6'>
-            <div className='border border-black bg-black rounded-full w-10 h-10 flex justify-center items-center'>
+    <div>
+      {isAuthenticated && (
+          <div className='flex justify-center items-center'>
             <button onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}>
-              <Icon className=' bg-black rounded-full w-10 h-10 p-2' icon="line-md:log-out" color='white'/>
+              <Icon className=' bg-black rounded-full w-7 h-7 p-1' icon="line-md:log-out" color='white'/>
             </button>
             </div>
-                <button onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })} className='font-semibold text-lg'>Cerrar sesión</button>
-            </div>
 
-      )
+      )}
+      </div>
   )
 }
 
