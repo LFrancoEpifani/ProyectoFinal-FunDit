@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Icon } from "@iconify/react";
 import { client } from "../../../../fundit-backend/.sanity/lib/client";
 import { useTranslation } from 'react-i18next';
+import { useAuth0 } from "@auth0/auth0-react";
 
 export async function getFlyers() {
   const query = `*[_type == "flyer"]{
@@ -21,7 +22,10 @@ export async function getFlyers() {
 }
 
 export default function Card() {
+
+
   const { t , i18n} = useTranslation("global");
+  const {user, isAuthenticated } = useAuth0();
   const [flyers, setFlyers] = useState([]);
   const [isFlipped, setIsFlipped] = useState(false);
   const [isModalOpen, setModalOpen] = useState(false);
@@ -83,6 +87,7 @@ export default function Card() {
               <Icon onClick={() => setIsFlipped(!isFlipped)} className="flip-icon" icon="mi:switch"/>
               <div className={`card-inner ${isFlipped ? "is-flipped" : ""}`}>
                 <div
+                onClick={() => setIsFlipped(!isFlipped)}
                   className="card-front"
                   style={{ backgroundImage: `url(${flyer.imageUrl})` }}
                 > 
@@ -90,13 +95,14 @@ export default function Card() {
                     <h2 className="text-white font-bold uppercase text-center text-xl">{flyer.title}</h2>
                     <div className="icons-bar flex gap-2 justify-center items-center">
                     </div>
-                    {!isFlipped &&(
+                    {isAuthenticated &&(
                 <Icon className="flex justify-end items-end text-2xl rounded-full w-7 h-7" icon="mdi-light:delete" color="red"/>
               )}
                   </div>
                 </div>
                 
                 <div
+                onClick={() => setIsFlipped(!isFlipped)}
                   className="card-back text-white"
                   style={{ backgroundImage: `url(${flyer.imageUrl})` }}
                 >
