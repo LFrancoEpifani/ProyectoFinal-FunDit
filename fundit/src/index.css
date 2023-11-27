@@ -173,11 +173,11 @@ body {
 
 
 .card {
-    margin: 2rem; 
+    margin: 1rem;
     position: relative;
     perspective: 1000px;
-    width: 250px; 
-    height: 400px; 
+    width: 270px; 
+    height: 420px; 
 
 }
 

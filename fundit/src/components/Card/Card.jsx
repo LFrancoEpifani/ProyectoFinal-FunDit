@@ -79,7 +79,7 @@ export default function Card() {
               categoriaSeleccionada === "Todos" || flyer.category === categoriaSeleccionada
           )
           .map((flyer) => (
-            <div key={flyer._id} className="card lg:w-[350px] lg:h-[550px] xl:w-[350px] xl:h-[550px]"> 
+            <div key={flyer._id} className="card w-[350px] h-[550px] xl:w-[350px] xl:h-[550px]"> 
               <Icon onClick={() => setIsFlipped(!isFlipped)} className="flip-icon" icon="mi:switch"/>
               <div className={`card-inner ${isFlipped ? "is-flipped" : ""}`}>
                 <div
