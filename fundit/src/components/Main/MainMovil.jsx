@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import Isometric from '../../assets/bgHD.png'
-import NavBar from '../NavBar/NavBar'
 import { useTranslation } from 'react-i18next'
 import PublicationModal from '../PublicationModal/PublicationModal'
 import { Link } from 'react-router-dom'
@@ -14,14 +13,13 @@ export default function MainMovil() {
 
   return (
     <div className='text-center'>
-    <NavBar/>
         <div className='font-semibold grid grid-cols-1 justify-center items-center gap-4  m-6 lg:flex lg:justify-center lg:items-center xl:gap-32'>
             <div className='bienvenida-fundit-movil text-xl flex justify-center items-center  md:text-5xl md:mt-8 md:leading-snug lg:text:6xl lg:leading-snug xl:flex xl:text-6xl xl:leading-tight '>
                 <p>{t("explore")} <br/> {t("the")} <span className='text-blue-800 font-bold'> {t("experience")}.</span> <br/> {t("found")}<br/> {t("click")}</p>
             </div>
               <div className='flex flex-wrap'>
                 <img
-                className='w-[260px] p-6 m-auto md:w-[340px] md:mt-8 border rounded-md' 
+                className='w-[260px] p-6 m-auto md:w-[340px] md:mt-8 border border-gray-300 rounded-md' 
                     src={Isometric} 
                     alt=''
                 />    
