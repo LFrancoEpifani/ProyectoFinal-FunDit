@@ -67,14 +67,14 @@ export default function Card() {
               categoriaSeleccionada === "Todos" || event.category === categoriaSeleccionada
           )
           .map((event) => (
-            <div key={event._id} className="card w-[350px] h-[550px] xl:w-[350px] xl:h-[550px]"> 
+            <div key={event._id} className="card"> 
               <Icon onClick={() => setIsFlipped(!isFlipped)} className="flip-icon" icon="mi:switch"/>
               <div className={`card-inner ${isFlipped ? "is-flipped" : ""}`}>
-                <div
+              <div
                 onClick={() => setIsFlipped(!isFlipped)}
-                  className="card-front"
+                  className="card-front text-white"
                   style={{ backgroundImage: `url(${event.urlImage})` }}
-                > 
+                >
                   <div className="bg-black absolute bottom-0 w-full p-3 flex justify-between items-center rounded-b-md">
                     <h2 className="text-white font-bold uppercase text-center text-xl">{event.title}</h2>
                     <div className="icons-bar flex gap-2 justify-center items-center">
@@ -96,18 +96,18 @@ export default function Card() {
                   <div className="mt-12 text-lg font-bold uppercase text-center">
                     <h3 className="">{event.title}</h3>
                   </div>
-                  <div className="descripction m-4 text-center text-md font-light">
-                    <p className="text-center">{event.description}</p>
+                  <div className=" m-4 text-md font-light">
+                    <p className="descripction">{event.description}</p>
                   </div>
                   <div className="flex justify-between m-4 text-md">
-                    <p>{event.schedule}hs</p>
+                    <p>{event.time}hs</p>
                     <p className="capitalize" style={{ color: event.price === 0 ? 'inherit' : '' }}>
                       {event.price === 0 ? 'Gratis' : `${event.price} €`}
                     </p>
                   </div>
                   <div className="text-center gap-2 flex justify-center items-center m-4">
                     <Icon className="text-xl" icon="gis:location-poi" color="red" />
-                    <p className="location text-md -tracking-tight">{event.location}</p>
+                    <p className="ubication text-md -tracking-tight">{event.ubication}</p>
                   </div>
                   <div className="flex justify-between items-center m-8 text-lg">
                     <button>

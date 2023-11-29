@@ -173,12 +173,12 @@ body {
 
 
 .card {
+    object-fit: cover;
     margin: 2rem;
     position: relative;
     perspective: 1000px;
-    width: 250px; 
-    height: 400px; 
-
+    width: 280px; 
+    height: 420px; 
 }
 
 
@@ -241,6 +241,7 @@ body {
 }
 
 .card-back {
+    background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     transform: rotateY(180deg);
@@ -258,7 +259,9 @@ body {
     z-index: 1;
 }
 
-.description{
+.descripction{
+    overflow: auto;
+    word-wrap: break-word;
     font-family: 'Poppins', sans-serif;
 }
 

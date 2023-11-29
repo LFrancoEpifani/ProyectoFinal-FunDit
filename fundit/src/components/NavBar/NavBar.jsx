@@ -23,15 +23,15 @@ export default function NavBar() {
         <nav className="m-4 md:mx-20 lg:mx-30 xl:mx-40">
            <div className="flex justify-between ">
            <div className="flex justify-center items-center">
-              <Link to={"/"}>
+              <Link to={"/ProyectoFinal-FunDit/"}>
                 <h2 className='font-porter text-xl rounded-lg w-7 h-7 lg:text-2xl'>F<span className="undit">UNDIT</span></h2>
               </Link>
             </div>
               <div className="flex gap-4 justify-center items-center cursor-pointer">
-              <Link to={"/"}>
+              <Link to={"/ProyectoFinal-FunDit/"}>
               <Icon className='w-5 h-5 lg:w-7 lg:h-7' icon="ion:home" color='black'/>
               </Link>
-               <Link to={"/flyers"}>
+               <Link to={"/ProyectoFinal-FunDit/flyers"}>
                <Icon className='w-5 h-5 lg:w-7 lg:h-7' icon="mdi:event" color='black'/>
                </Link>
               <Icon onClick={() => setOpenPublicationModal(true)} className='w-5 h-5 lg:w-7 lg:h-7' icon="ph:plus-fill" color='black'/>

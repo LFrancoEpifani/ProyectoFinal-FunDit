@@ -112,7 +112,7 @@ export default function PublicationModal({ setOpenPublicationModal }) {
               </select>
             </div>
             <div className="flex flex-col m-4 sm:m-1">
-              <label className="m-2  sm:text-center">Descripción</label>
+              <label className="m-2 sm:text-center">Descripción</label>
               <input
                 className="sm:w-40 w-72 h-10 rounded m-1 border-2 border-gray-200"
                 type="text"
@@ -126,7 +126,7 @@ export default function PublicationModal({ setOpenPublicationModal }) {
             <div className="flex justify-center items-center">
               <label  className="flex justify-center items-center">
                 urlImage:
-                <input className="sm:w-32 w-72 h-10 rounded m-1 border-2 border-gray-200" type="file" name="urlImage" value={formData.urlImage} onChange={handleInputChange} />
+                <input className="sm:w-32 w-72 h-10 rounded m-1 border-2 border-gray-200" type="text" name="urlImage" value={formData.urlImage} onChange={handleInputChange} />
               </label>
             </div>
           </div>
